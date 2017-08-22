@@ -5,4 +5,4 @@ build:
 
 
 run:
-	docker run -p 3000:3000 -d app
+	docker run -p 3000:8040 -d app -ti
