@@ -1,5 +1,4 @@
-
-FROM node:boron
+FROM node:latest
 
 
 ADD . /usr/src/app
