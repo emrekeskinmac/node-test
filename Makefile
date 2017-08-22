@@ -1,8 +1,8 @@
 
-
 build:
-	docker build -t node:latest .
+	docker build -t app .
+
 
 
 run:
-	docker run -d -p 3000:8040 --name app node:latest 
+	docker run -p 3000:3000 -d app
