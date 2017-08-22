@@ -1,20 +1,17 @@
 FROM node:8.3.0-alpine
 
-RUN mkdir -p /usr/src/app
+RUN mkdir /app
 
-# Change directory so that our commands run inside this new directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Copy dependency definitions
-COPY package.json /usr/src/app
+COPY package.json /app
 
-# Install dependecies
 RUN npm install
 
-# Get all the code needed to run the app
-COPY . /usr/src/app
+COPY . /app
 
-
+# Expose the port the app runs in
 EXPOSE 8040
 
-CMD [ "npm", "start" ]
+# Serve the app
+CMD ["npm", "start"]
