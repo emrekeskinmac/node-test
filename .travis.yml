@@ -2,7 +2,9 @@ sudo: required
 
 services:
   - docker
-
+  - git
+  - ssh
+  
 before_install:
 - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 
