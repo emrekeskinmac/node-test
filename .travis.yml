@@ -1,10 +1,9 @@
 sudo: required
-
 services:
-  - docker
-  
+- docker
 before_install:
+- openssl aes-256-cbc -K $encrypted_3a8c9f8621ee_key -iv $encrypted_3a8c9f8621ee_iv
+  -in a.enc -out ../a -d
 - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-
 script:
 - bash deploy.sh
