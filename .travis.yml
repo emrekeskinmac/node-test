@@ -12,7 +12,7 @@ script:
 - npm install
 - npm test
 - echo "Test Güzel Geçti"
-- docker build -t emrekeskinmac/node-test:$(echo git rev-parse --short HEAD)
-- docker push emrekeskinmac/node-test:$(echo git rev-parse --short HEAD)
-- ssh root@46.101.248.17 "docker service update --image emrekeskinmac/node-test:$(echo git rev-parse --short HEAD) test" 
+- docker build -t emrekeskinmac/node-test:$(echo git rev-parse HEAD)
+- docker push emrekeskinmac/node-test:$(echo git rev-parse HEAD)
+- ssh root@46.101.248.17 "docker service update --image emrekeskinmac/node-test:$(echo git rev-parse HEAD) test" 
 - echo "Oldu"
