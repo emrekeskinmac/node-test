@@ -1,14 +1,27 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile {
+      filename 'Dockerfile'
+    }
+    
+  }
   stages {
     stage('Test') {
       steps {
-        echo 'Hello'
-        sh '''
+        parallel(
+          "Test": {
+            echo 'Hello'
+            
+          },
+          "install": {
+            sh '''
 npm install
 npm test
-echo "Test Güzel Geçti"
+echo "Test GÃ¼zel GeÃ§ti"
 docker build -t emrekeskinmac/node-test:$version .'''
+            
+          }
+        )
       }
     }
   }
