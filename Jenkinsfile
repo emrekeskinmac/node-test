@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'node-test'
+      image 'emrekeskinmac/node-test'
     }
     
   }
